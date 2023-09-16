@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e005f);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+
+}
+
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    border-radius: 30px;
+
+}
+.row input{
+    border: none;
+    outline: none;
+    flex: 1;
+    background: transparent;
+    padding: 10px;
+
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    /* The user-select property specifies whether the text of an element can be selected. In web browsers, if you double-click on some text it will be selected/highlighted. This property can be used to prevent this. Default value: auto. */
+    user-select: none;
+    position: relative;
+
+}
+
+
+
+/* Pseudo-elements start with a double colon :: . ::before is an example of a pseudo-element. Note: Some early pseudo-elements used the single colon syntax, so you may sometimes see this in code or examples. Modern browsers support the early pseudo-elements with single- or double-colon syntax for backwards compatibility. */
+
+
+/* A CSS pseudo-element is a keyword added to a selector(here selector is ul li) that lets you style a specific part of the selected element */
+
+ul li::before{
+    content: '';
+    /* here were are adding position absolute so for above css(ul li) we have to add position relative */
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-image: url(images/unchecked.png);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+
+} 
+ul li.checked{
+    color: #555;
+    text-decoration:line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+
+
+ul li span{
+ /* you will not see this code in html file anywhere , we have created it in js file , it is a js one ,, seee the js file for better understanding */
+
+ position: absolute;
+ /* the parent element of span is li here */
+ right: 0;
+ top: 5px;
+ width: 40px;
+ height: 40px;
+ font-size: 22px;
+ color: #e41313;
+ line-height: 40px;
+ text-align: center;
+ border-radius: 50%;
+ transition:0.3s;
+}
+
+ul li span:hover{
+    /* when we take cursor to the span the hover effects will be apply */
+    background: #edeef0;
+    
+
+}
